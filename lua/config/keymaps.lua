@@ -25,6 +25,12 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
+-- lsp saga
+keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
+keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>") -- jump to previous diagnostic in buffer
+keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+
 -- keymap
 keymap.set("n", "<leader>hw", ":HopWord<cr>")
 keymap.set("n", "<leader>hww", ":HopWordMW<cr>")
