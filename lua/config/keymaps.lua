@@ -25,6 +25,13 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
+-- teleccope lsp
+keymap.set("n", "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>") -- lsp_document_symbols
+-- telescope file
+keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
+-- rust-tools
+keymap.set("n", "<leader>ha", "<cmd>RustHoverActions<cr>") -- list current changes per file with diff preview ["gs" for git status]
+
 -- lsp saga
 keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
@@ -38,3 +45,4 @@ keymap.set("n", "<leader>hc", ":HopChar1<cr>")
 keymap.set("n", "<leader>hcw", ":HopChar1MW<cr>")
 
 keymap.set("n", "<leader>ge", "<cmd>ChatGPTEditWithInstructions<cr>")
+keymap.set("n", "gh", "<cmd>Lspsaga peek_definition<CR>")
