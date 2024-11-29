@@ -4,6 +4,7 @@
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>")
+
 keymap.set("n", "<leader>sv", "<C-W>v")
 keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>")
 keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
@@ -46,3 +47,6 @@ keymap.set("n", "<leader>hcw", ":HopChar1MW<cr>")
 
 keymap.set("n", "<leader>ge", "<cmd>ChatGPTEditWithInstructions<cr>")
 keymap.set("n", "gh", "<cmd>Lspsaga peek_definition<CR>")
+
+-- emmet
+keymap.set("i", "<C-e>", "<Plug>(emmet-expand-abbr)")
