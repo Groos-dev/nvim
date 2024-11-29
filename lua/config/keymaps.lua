@@ -10,12 +10,12 @@ keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>")
 keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
 keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
 
--- tab nav
-keymap.set("n", "<leader>tn", "<cmd>tabnext<cr>")
-keymap.set("n", "<leader>tp", "<cmd>tabprev<cr>")
-keymap.set("n", "<leader>tl", "<cmd>tablast<cr>")
-keymap.set("n", "<leader>tf", "<cmd>tabfirst<cr>")
-
+-- -- tab nav
+-- keymap.set("n", "<leader>tn", "<cmd>tabnext<cr>")
+-- keymap.set("n", "<leader>tp", "<cmd>tabprev<cr>")
+-- keymap.set("n", "<leader>tl", "<cmd>tablast<cr>")
+-- keymap.set("n", "<leader>tf", "<cmd>tabfirst<cr>")
+--
 -- telescope general
 keymap.set("n", "<leader>lds", "<cmd>Telescope lsp_document_symbols<cr>")
 keymap.set("n", "<leader>tgf", "<cmd>Telescope lsp_references<cr>")
