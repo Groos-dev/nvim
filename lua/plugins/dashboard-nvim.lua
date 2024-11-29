@@ -1,14 +1,16 @@
 local logo = [[
-         _                                      
- __  __ (_)  _ __    ____   ___   _ __     __ _ 
+         _
+ __  __ (_)  _ __    ____   ___   _ __     __ _
  \ \/ / | | | '_ \  |_  /  / _ \ | '_ \   / _` |
   >  <  | | | | | |  / /  |  __/ | | | | | (_| |
  /_/\_\ |_| |_| |_| /___|  \___| |_| |_|  \__, |
-                                           |___/ 
+                                           |___/
 ]]
 return {
   "nvimdev/dashboard-nvim",
   enabled = true,
+  priority = 1000,
+  lazy = false,
   event = "VimEnter",
   config = function()
     require("dashboard").setup({
@@ -17,7 +19,6 @@ return {
         header = vim.split(string.rep("\n", 2) .. logo, "\n"),
         week_header = {
           concat = "Have a great coding day!", -- 时间字符串之后的附加字符串
-          append = { "Happy Coding!" }, -- 在时间字符串行之后追加内容
         },
         shortcut = {
           { desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
@@ -51,3 +52,16 @@ return {
   end,
   dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }
+-- return {
+--   "nvimdev/dashboard-nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require("dashboard").setup({
+--       theme = "hyper",
+--       config = {
+--         header = { "Welcome to Neovim!" },
+--       },
+--     })
+--   end,
+-- }
