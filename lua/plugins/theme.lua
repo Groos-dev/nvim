@@ -10,10 +10,11 @@ return {
     lazy = false,
     priority = 1000, -- make sure load before than other plugins
   },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dracula",
+      colorscheme = "catppuccin",
     },
   },
 }

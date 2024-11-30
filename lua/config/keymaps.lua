@@ -26,8 +26,6 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- teleccope lsp
-keymap.set("n", "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>") -- lsp_document_symbols
 -- telescope file
 keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
 -- rust-tools
