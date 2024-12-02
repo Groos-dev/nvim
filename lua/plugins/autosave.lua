@@ -12,13 +12,15 @@ return {
           dim = 0.18,
           cleaning_interval = 1250,
         },
-        trigger_events = { "InsertLeave", "TextChanged" },
+        -- InsertLeave: insert -> normal
+        -- TextChanged:
+        trigger_events = { "TextChanged" },
+        debounce_delay = 3000,
         condition = function(buf)
           local fn = vim.fn
           local utils = require("auto-save.utils.data")
           return fn.getbufvar(buf, "&modifiable") == 1 and utils.not_in(fn.getbufvar(buf, "&filetype"), {})
         end,
-        debounce_delay = 135,
         callbacks = {
           before_saving = function()
             print("AutoSave: Saving...")
