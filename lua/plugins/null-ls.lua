@@ -6,12 +6,12 @@ return {
       local null_ls = require("null-ls")
       null_ls.setup({
         sources = {
-          -- 添加 Prettier 作为格式化工具
+          -- add Prettier
           null_ls.builtins.formatting.prettier.with({
             extra_args = { "--single-quote", "--jsx-single-quote" },
           }),
         },
-        -- 让 LSP 在保存文件时自动格式化
+        -- autoformate when save
         -- on_attach = function(client, bufnr)
         --   client.offset_encoding = "utf-8"
         --   if client.supports_method("textDocument/formatting") then

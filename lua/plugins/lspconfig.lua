@@ -2,12 +2,14 @@ return {
   "neovim/nvim-lspconfig",
   init = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
+
     -- Disable specific keymaps and use lsp-sage's keymaps
-    keys[#keys + 1] = { "<leader>ca", false }
-    keys[#keys + 1] = { "]d", false }
-    keys[#keys + 1] = { "[d]", false }
+    keys[#keys + 1] = { "<leader>ca", false } -- Disable Code Action shortcut
+    keys[#keys + 1] = { "]d", false } -- Disable next diagnostic
+    keys[#keys + 1] = { "[d]", false } -- Disable previous diagnostic
   end,
   opts = function(_, opts)
+    -- Disable autoformat globally
     opts.autoformat = false
 
     -- Ensure the `servers` table exists
@@ -38,7 +40,14 @@ return {
 
     -- Add Tailwind CSS LS configuration
     opts.servers.tailwindcss = {
-      filetypes = { "html", "css", "javascriptreact", "typescriptreact", "vue" },
+      filetypes = {
+        "html",
+        "css",
+        "javascriptreact",
+        "typescriptreact",
+        "vue",
+        "svelte", -- Optional: Add Svelte support if needed
+      },
     }
   end,
 }
