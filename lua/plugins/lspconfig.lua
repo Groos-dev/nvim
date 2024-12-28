@@ -20,15 +20,16 @@ return {
       filetypes = {
         "html",
         "css",
-        "javascriptreact",
-        "typescriptreact",
-        "vue",
-        "sass",
-        "scss",
-        "less",
-        "svelte",
-        "pug",
       },
+      -- "javascriptreact",
+      -- "typescriptreact",
+      -- "vue",
+      -- "sass",
+      -- "scss",
+      -- "less",
+      -- "svelte",
+      -- "pug",
+
       init_options = {
         html = {
           options = {
