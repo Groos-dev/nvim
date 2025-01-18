@@ -10,6 +10,5 @@ g.tmux_navigator_no_mappings = 1
 opt.relativenumber = false
 opt.number = true
 opt.relativenumber = true
-vim.opt.clipboard = ""
 -- Set to false to disable auto format
 vim.g.lazyvim_eslint_auto_format = true

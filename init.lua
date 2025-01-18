@@ -6,7 +6,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.g.autoformat = false
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard:append("unnamedplus")
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 vim.opt.termguicolors = true

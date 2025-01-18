@@ -52,24 +52,36 @@ keymap.set("i", "<C-e>", "<Plug>(emmet-expand-abbr)")
 
 -- VSCode specific keymaps when running in VSCode with Neovim
 if vim.g.vscode then
-  local vscode = require('vscode')
 
   -- Code navigation
+  keymap.set('n', 'gr', "<cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
+  keymap.set("n", "gd", "<cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>")
+  keymap.set("n", "gD", "<cmd>call VSCodeNotify('editor.action.goToDeclaration')<CR>")
   keymap.set("n", "gh", "<cmd>call VSCodeNotify('editor.action.showHover')<CR>")
-  keymap.set("n", "gd", "<cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>")
-  keymap.set("n", "gf", "<cmd>call VSCodeNotify('editor.action.revealDeclaration')<CR>")
   keymap.set("n", "gH", "<cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>")
+  keymap.set("n", "gi", "<cmd>call VSCodeNotify('editor.action.goToLastEditLocation')<CR>")
+  keymap.set("n", "gI", "<cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>")
+  keymap.set("n", "gX", "<cmd>call VSCodeNotify('revealFileInOS')<CR>")
 
+  -- explorer
+  keymap.set("n", "<leader>e", "<cmd>call VSCodeNotify('workbench.view.explorer')<CR>", { desc = "Toggle file explorer" })
   -- Code formatting
   keymap.set("n", "<leader>cf", "<cmd>call VSCodeNotify('editor.action.formatDocument')<CR>")
--- Window management
-  keymap.set("n", "<C-w>v", "<cmd>call VSCodeNotify('workbench.action.splitEditor')<CR>")
-  keymap.set("n", "<C-w>s", "<cmd>call VSCodeNotify('workbench.action.splitEditorDown')<CR>")
 
   -- Terminal
   keymap.set("n", "<leader>tt", "<cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>")
 
   -- LSP actions
   keymap.set("n", "<leader>ca", "<cmd>call VSCodeNotify('editor.action.quickFix')<CR>")
-  keymap.set("n", "<leader>rn", "<cmd>call VSCodeNotify('editor.action.rename')<CR>")
+  keymap.set("n", "<leader>cr", "<cmd>call VSCodeNotify('editor.action.rename')<CR>")
+
+  -- debug
+  keymap.set("n", "<leader>da", "<cmd>call VSCodeNotify('workbench.action.debug.start')<CR>")
+  keymap.set("n", "<leader>dc", "<cmd>call VSCodeNotify('workbench.action.debug.continue')<CR>")
+  keymap.set("n", "<leader>dC", "<cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>")
+  keymap.set("n", "<leader>dd", "<cmd>call VSCodeNotify('workbench.action.debug.disconnect')<CR>")
+  keymap.set("n", "<leader>ds", "<cmd>call VSCodeNotify('workbench.action.debug.stepOver')<CR>")
+  keymap.set("n", "<leader>db", "<cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>", { desc = "Toggle breakpoint" })
+  keymap.set("n", "<leader>dB", "<cmd>call VSCodeNotify('editor.debug.action.conditionalBreakpoint')<CR>", { desc = "Toggle conditional breakpoint" })
+  keymap.set("n", "<leader>qq", "<cmd>call VSCodeNotify('workbench.action.quit')<CR>")
 end
