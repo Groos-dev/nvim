@@ -52,6 +52,9 @@ keymap.set("i", "<C-e>", "<Plug>(emmet-expand-abbr)")
 
 -- VSCode specific keymaps when running in VSCode with Neovim
 if vim.g.vscode then
+  --Move
+  keymap.set("n", "j", "<cmd>call VSCodeNotify('cursorDown')<CR>")
+  keymap.set("n", "k", "<cmd>call VSCodeNotify('cursorUp')<CR>")
 
   -- Code navigation
   keymap.set('n', 'gr', "<cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
@@ -63,7 +66,7 @@ if vim.g.vscode then
   keymap.set("n", "gI", "<cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>")
   keymap.set("n", "gX", "<cmd>call VSCodeNotify('revealFileInOS')<CR>")
 
-  -- explorer
+  -- Explorer
   keymap.set("n", "<leader>e", "<cmd>call VSCodeNotify('workbench.view.explorer')<CR>", { desc = "Toggle file explorer" })
   -- Code formatting
   keymap.set("n", "<leader>cf", "<cmd>call VSCodeNotify('editor.action.formatDocument')<CR>")
@@ -75,7 +78,7 @@ if vim.g.vscode then
   keymap.set("n", "<leader>ca", "<cmd>call VSCodeNotify('editor.action.quickFix')<CR>")
   keymap.set("n", "<leader>cr", "<cmd>call VSCodeNotify('editor.action.rename')<CR>")
 
-  -- debug
+  -- Debug
   keymap.set("n", "<leader>da", "<cmd>call VSCodeNotify('workbench.action.debug.start')<CR>")
   keymap.set("n", "<leader>dc", "<cmd>call VSCodeNotify('workbench.action.debug.continue')<CR>")
   keymap.set("n", "<leader>dC", "<cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>")
@@ -84,4 +87,19 @@ if vim.g.vscode then
   keymap.set("n", "<leader>db", "<cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>", { desc = "Toggle breakpoint" })
   keymap.set("n", "<leader>dB", "<cmd>call VSCodeNotify('editor.debug.action.conditionalBreakpoint')<CR>", { desc = "Toggle conditional breakpoint" })
   keymap.set("n", "<leader>qq", "<cmd>call VSCodeNotify('workbench.action.quit')<CR>")
+
+  -- Fold
+  keymap.set("n", "zc", "<cmd>call VSCodeNotify('editor.fold')<CR>")
+  keymap.set("n", "zo", "<cmd>call VSCodeNotify('editor.unfold')<CR>")
+  keymap.set("n", "zC", "<cmd>call VSCodeNotify('editor.foldAll')<CR>")
+  keymap.set("n", "zO", "<cmd>call VSCodeNotify('editor.unfoldAll')<CR>")
+
+  -- git
+  keymap.set("n", "<leader>ghS", "<cmd>call VSCodeNotify('git.stage')<CR>")
+  keymap.set("n", "<leader>ghs", "<cmd>call VSCodeNotify('git.stageAll')<CR>")
+  keymap.set("n", "<leader>ghb", "<cmd>call VSCodeNotify('gitlens.toggleLineBlame')<CR>", { desc = "Toggle line blame" })
+  keymap.set("n", "<leader>ghB", "<cmd>call VSCodeNotify('gitlens.toggleFileBlame')<CR>", { desc = "Toggle file blame" })
+  keymap.set("n", "<leader>ghd", "<cmd>call VSCodeNotify('git.openChange')<CR>", { desc = "Open git diff" })
+
+
 end
