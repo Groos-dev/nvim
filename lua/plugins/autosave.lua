@@ -23,7 +23,7 @@ return {
         end,
         callbacks = {
           before_saving = function()
-            print("AutoSave: Saving...")
+            print("AutoSave: Saving.. .")
           end,
         },
       })

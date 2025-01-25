@@ -58,8 +58,8 @@ if vim.g.vscode then
 
   -- Code navigation
   keymap.set('n', 'gr', "<cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
-  keymap.set("n", "gd", "<cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>")
-  keymap.set("n", "gD", "<cmd>call VSCodeNotify('editor.action.goToDeclaration')<CR>")
+  keymap.set("n", "gD", "<cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>")
+  keymap.set("n", "gd", "<cmd>call VSCodeNotify('editor.action.goToDeclaration')<CR>")
   keymap.set("n", "gh", "<cmd>call VSCodeNotify('editor.action.showHover')<CR>")
   keymap.set("n", "gH", "<cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>")
   keymap.set("n", "gi", "<cmd>call VSCodeNotify('editor.action.goToLastEditLocation')<CR>")
@@ -67,7 +67,8 @@ if vim.g.vscode then
   keymap.set("n", "gX", "<cmd>call VSCodeNotify('revealFileInOS')<CR>")
 
   -- Explorer
-  keymap.set("n", "<leader>e", "<cmd>call VSCodeNotify('workbench.view.explorer')<CR>", { desc = "Toggle file explorer" })
+  keymap.set("n", "<leader>e", "<cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>", { desc = "Toggle file explorer" })
+  keymap.set("n", "<leader>E", "<cmd>call VSCodeNotify('workbench.view.explorer')<CR>", { desc = "Toggle file explorer and focus" })
   -- Code formatting
   keymap.set("n", "<leader>cf", "<cmd>call VSCodeNotify('editor.action.formatDocument')<CR>")
 
@@ -100,6 +101,7 @@ if vim.g.vscode then
   keymap.set("n", "<leader>ghb", "<cmd>call VSCodeNotify('gitlens.toggleLineBlame')<CR>", { desc = "Toggle line blame" })
   keymap.set("n", "<leader>ghB", "<cmd>call VSCodeNotify('gitlens.toggleFileBlame')<CR>", { desc = "Toggle file blame" })
   keymap.set("n", "<leader>ghd", "<cmd>call VSCodeNotify('git.openChange')<CR>", { desc = "Open git diff" })
+  keymap.set("n", "<leader>ghD", "<cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>", { desc = "Show diff of last commit" })
 
 
 end
