@@ -57,7 +57,7 @@ if vim.g.vscode then
   keymap.set("n", "k", "<cmd>call VSCodeNotify('cursorUp')<CR>")
 
   -- Code navigation
-  keymap.set('n', 'gr', "<cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
+  keymap.set("n", "gr", "<cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
   keymap.set("n", "gD", "<cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>")
   keymap.set("n", "gd", "<cmd>call VSCodeNotify('editor.action.goToDeclaration')<CR>")
   keymap.set("n", "gh", "<cmd>call VSCodeNotify('editor.action.showHover')<CR>")
@@ -67,8 +67,18 @@ if vim.g.vscode then
   keymap.set("n", "gX", "<cmd>call VSCodeNotify('revealFileInOS')<CR>")
 
   -- Explorer
-  keymap.set("n", "<leader>e", "<cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>", { desc = "Toggle file explorer" })
-  keymap.set("n", "<leader>E", "<cmd>call VSCodeNotify('workbench.view.explorer')<CR>", { desc = "Toggle file explorer and focus" })
+  keymap.set(
+    "n",
+    "<leader>e",
+    "<cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>",
+    { desc = "Toggle file explorer" }
+  )
+  keymap.set(
+    "n",
+    "<leader>E",
+    "<cmd>call VSCodeNotify('workbench.view.explorer')<CR>",
+    { desc = "Toggle file explorer and focus" }
+  )
   -- Code formatting
   keymap.set("n", "<leader>cf", "<cmd>call VSCodeNotify('editor.action.formatDocument')<CR>")
 
@@ -76,7 +86,12 @@ if vim.g.vscode then
   keymap.set("n", "<leader>tt", "<cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>")
 
   -- bottom panel
-  keymap.set('n', '<leader>tc', '<cmd>call VSCodeNotify("workbench.action.closePanel")<CR>', { noremap = true, silent = true })
+  keymap.set(
+    "n",
+    "<leader>tc",
+    '<cmd>call VSCodeNotify("workbench.action.closePanel")<CR>',
+    { noremap = true, silent = true }
+  )
 
   -- LSP actions
   keymap.set("n", "<leader>ca", "<cmd>call VSCodeNotify('editor.action.quickFix')<CR>")
@@ -88,18 +103,32 @@ if vim.g.vscode then
   --Task
   keymap.set("n", "<leader>tr", "<cmd>call VSCodeNotify('workbench.action.tasks.runTask')<CR>", { desc = "Run task" })
 
-
   -- Debug
   keymap.set("n", "<leader>da", "<cmd>call VSCodeNotify('workbench.action.debug.start')<CR>")
   keymap.set("n", "<leader>dc", "<cmd>call VSCodeNotify('workbench.action.debug.continue')<CR>")
   keymap.set("n", "<leader>dC", "<cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>")
   keymap.set("n", "<leader>dd", "<cmd>call VSCodeNotify('workbench.action.debug.disconnect')<CR>")
   keymap.set("n", "<leader>ds", "<cmd>call VSCodeNotify('workbench.action.debug.stepOver')<CR>")
-  keymap.set("n", "<leader>db", "<cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>", { desc = "Toggle breakpoint" })
-  keymap.set("n", "<leader>dB", "<cmd>call VSCodeNotify('editor.debug.action.conditionalBreakpoint')<CR>", { desc = "Toggle conditional breakpoint" })
+  keymap.set(
+    "n",
+    "<leader>db",
+    "<cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>",
+    { desc = "Toggle breakpoint" }
+  )
+  keymap.set(
+    "n",
+    "<leader>dB",
+    "<cmd>call VSCodeNotify('editor.debug.action.conditionalBreakpoint')<CR>",
+    { desc = "Toggle conditional breakpoint" }
+  )
 
   -- Quit
-  keymap.set("n", "<leader>qq", "<cmd>call VSCodeNotify('workbench.action.closeWindow')<CR>;<cmd>call VSCodeNotify('workbench.action.closeFolder')<CR>", { desc = "Quit window and close project" })
+  keymap.set(
+    "n",
+    "<leader>qq",
+    "<cmd>call VSCodeNotify('workbench.action.closeWindow')<CR>;<cmd>call VSCodeNotify('workbench.action.closeFolder')<CR>",
+    { desc = "Quit window and close project" }
+  )
   keymap.set("n", "<leader>qQ", "<cmd>call VSCodeNotify('workbench.action.quit')<CR>", { desc = "Quit VSCode" })
 
   -- Fold
@@ -111,12 +140,37 @@ if vim.g.vscode then
   -- Git
   keymap.set("n", "<leader>ghS", "<cmd>call VSCodeNotify('git.stage')<CR>")
   keymap.set("n", "<leader>ghs", "<cmd>call VSCodeNotify('git.stageAll')<CR>")
-  keymap.set("n", "<leader>ghb", "<cmd>call VSCodeNotify('gitlens.toggleLineBlame')<CR>", { desc = "Toggle line blame" })
-  keymap.set("n", "<leader>ghB", "<cmd>call VSCodeNotify('gitlens.toggleFileBlame')<CR>", { desc = "Toggle file blame" })
+  keymap.set(
+    "n",
+    "<leader>ghb",
+    "<cmd>call VSCodeNotify('gitlens.toggleLineBlame')<CR>",
+    { desc = "Toggle line blame" }
+  )
+  keymap.set(
+    "n",
+    "<leader>ghB",
+    "<cmd>call VSCodeNotify('gitlens.toggleFileBlame')<CR>",
+    { desc = "Toggle file blame" }
+  )
   keymap.set("n", "<leader>ghd", "<cmd>call VSCodeNotify('git.openChange')<CR>", { desc = "Open git diff" })
-  keymap.set("n", "<leader>ghD", "<cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>", { desc = "Show diff of last commit" })
+  keymap.set(
+    "n",
+    "<leader>ghD",
+    "<cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>",
+    { desc = "Show diff of last commit" }
+  )
 
   -- Buffer
-  keymap.set("n", "<leader>bd", "<cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>", { desc = "Close current buffer" })
-  keymap.set("n", "<leader>bD", "<cmd>call VSCodeNotify('workbench.action.closeAllEditors')<CR>", { desc = "Close all buffers" })
+  keymap.set(
+    "n",
+    "<leader>bd",
+    "<cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>",
+    { desc = "Close current buffer" }
+  )
+  keymap.set(
+    "n",
+    "<leader>bD",
+    "<cmd>call VSCodeNotify('workbench.action.closeAllEditors')<CR>",
+    { desc = "Close all buffers" }
+  )
 end
