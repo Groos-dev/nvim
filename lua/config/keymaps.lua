@@ -65,7 +65,7 @@ if vim.g.vscode then
   keymap.set("n", "gi", "<cmd>call VSCodeNotify('editor.action.goToLastEditLocation')<CR>")
   keymap.set("n", "gI", "<cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>")
   keymap.set("n", "gX", "<cmd>call VSCodeNotify('revealFileInOS')<CR>")
-
+  keymap.set("n", "<leader>sg", "<cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>")
   -- Explorer
   keymap.set(
     "n",
@@ -104,23 +104,25 @@ if vim.g.vscode then
   keymap.set("n", "<leader>tr", "<cmd>call VSCodeNotify('workbench.action.tasks.runTask')<CR>", { desc = "Run task" })
 
   -- Debug
-  keymap.set("n", "<leader>da", "<cmd>call VSCodeNotify('workbench.action.debug.start')<CR>")
-  keymap.set("n", "<leader>dc", "<cmd>call VSCodeNotify('workbench.action.debug.continue')<CR>")
-  keymap.set("n", "<leader>dC", "<cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>")
-  keymap.set("n", "<leader>dd", "<cmd>call VSCodeNotify('workbench.action.debug.disconnect')<CR>")
-  keymap.set("n", "<leader>ds", "<cmd>call VSCodeNotify('workbench.action.debug.stepOver')<CR>")
-  keymap.set(
-    "n",
-    "<leader>db",
-    "<cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>",
-    { desc = "Toggle breakpoint" }
-  )
-  keymap.set(
-    "n",
-    "<leader>dB",
-    "<cmd>call VSCodeNotify('editor.debug.action.conditionalBreakpoint')<CR>",
-    { desc = "Toggle conditional breakpoint" }
-  )
+  keymap.set("n", "<leader>da", "<cmd>call VSCodeNotify('workbench.action.debug.start')<CR>", { desc = "Debug: Start/Continue" })
+  keymap.set("n", "<leader>dc", "<cmd>call VSCodeNotify('workbench.action.debug.continue')<CR>", { desc = "Debug: Continue" })
+  keymap.set("n", "<leader>ds", "<cmd>call VSCodeNotify('workbench.action.debug.stepOver')<CR>", { desc = "Debug: Step Over" })
+  keymap.set("n", "<leader>di", "<cmd>call VSCodeNotify('workbench.action.debug.stepInto')<CR>", { desc = "Debug: Step Into" })
+  keymap.set("n", "<leader>do", "<cmd>call VSCodeNotify('workbench.action.debug.stepOut')<CR>", { desc = "Debug: Step Out" })
+  keymap.set("n", "<leader>db", "<cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>", { desc = "Debug: Toggle Breakpoint" })
+  keymap.set("n", "<leader>dB", "<cmd>call VSCodeNotify('editor.debug.action.conditionalBreakpoint')<CR>", { desc = "Debug: Conditional Breakpoint" })
+  keymap.set("n", "<leader>dx", "<cmd>call VSCodeNotify('workbench.action.debug.stop')<CR>", { desc = "Debug: Stop" })
+  keymap.set("n", "<leader>dr", "<cmd>call VSCodeNotify('workbench.action.debug.restart')<CR>", { desc = "Debug: Restart" })
+  keymap.set("n", "<leader>dd", "<cmd>call VSCodeNotify('workbench.action.debug.disconnect')<CR>", { desc = "Debug: Disconnect" })
+  keymap.set("n", "<leader>dC", "<cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>", { desc = "Debug: Run to Cursor" })
+
+  -- Debug Watch/Evaluate
+  keymap.set("n", "<leader>dwa", "<cmd>call VSCodeNotify('editor.debug.action.selectionToWatch')<CR>", { desc = "Debug: Watch word under cursor" })
+  keymap.set("v", "<leader>dwa", "<cmd>call VSCodeNotify('editor.debug.action.selectionToWatch')<CR>", { desc = "Debug: Watch selection" })
+  keymap.set("n", "<leader>dwp", "<cmd>call VSCodeNotify('workbench.debug.action.focusWatchView')<CR>", { desc = "Debug: Focus Watch view" })
+  keymap.set("n", "<leader>dwr", "<cmd>call VSCodeNotify('workbench.debug.viewlet.action.removeAllWatchExpressions')<CR>", { desc = "Debug: Remove watch expression" })
+  keymap.set("n", "<leader>dwc", "<cmd>call VSCodeNotify('workbench.debug.viewlet.action.removeAllWatchExpressions')<CR>", { desc = "Debug: Clear all watches" })
+
 
   -- Quit
   keymap.set(
@@ -173,4 +175,6 @@ if vim.g.vscode then
     "<cmd>call VSCodeNotify('workbench.action.closeAllEditors')<CR>",
     { desc = "Close all buffers" }
   )
+
+
 end
